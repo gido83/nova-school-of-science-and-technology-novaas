@@ -146,13 +146,13 @@
             "9394ae28e14ff07b",
             "b929858d9ce0983a",
             "d01e806812896548",
-            "149974cc4e184176",
-            "d89932a1047449c6",
-            "dfd73ecbe81941ea",
-            "365270510b3b48f0",
-            "ac87c94e236d42ea",
-            "e063f71137974d26",
-            "1b2749428135428b"
+            "28322a69fb804caa",
+            "9d4f10d1d0e7460d",
+            "0068b0f46ff247b9",
+            "44e09c500a1f424d",
+            "ead0317af05f4fab",
+            "fc68fd98e39d47c3",
+            "285ea6d8d2bd4a50"
         ],
         "x": 114,
         "y": 59,
@@ -1517,6 +1517,37 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "af3c1984038f2b46",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "@flowfuse/node-red-dashboard": "1.27.2",
+            "node-red-node-sqlite": "1.1.0",
+            "node-red-node-swagger": "0.1.9",
+            "node-red-contrib-unsafe-function": "0.8.0",
+            "node-red-contrib-advance-logger": "1.0.2",
+            "node-red-contrib-msg-router": "0.0.7",
+            "node-red-contrib-os": "0.2.1",
+            "node-red-contrib-http-multipart": "0.3.2",
+            "node-red-contrib-set-defaults": "0.9.1",
+            "node-red-node-base64": "1.0.0",
+            "node-red-contrib-countdown": "1.3.2",
+            "node-red-contrib-cron-plus": "2.2.1",
+            "node-red-contrib-prib-functions": "0.23.2",
+            "node-red-contrib-msg-speed": "2.1.0",
+            "node-red-contrib-regression": "1.0.0",
+            "node-red-contrib-kafka-manager": "0.5.1",
+            "node-red-contrib-loadbalance": "0.6.0",
+            "node-red-contrib-crypto-js-dynamic": "0.1.22",
+            "node-red-contrib-msg-size": "1.1.0",
+            "node-red-contrib-wait-paths": "0.3.2",
+            "node-red-contrib-pdfmake": "1.1.0",
+            "node-red-contrib-qrcode-generator": "0.4.0",
+            "node-red-contrib-simple-gate": "0.5.2"
+        }
     },
     {
         "id": "6c23162c.b90798",
@@ -8535,9 +8566,10 @@
         "payloadTimerStart": "",
         "payloadTimerStartType": "nul",
         "payloadTimerStop": "event",
-        "payloadTimerStopType": "msg",
+        "payloadTimerStopType": "str",
         "timer": "10",
         "resetWhileRunning": false,
+        "outputOnReset": false,
         "setTimeToNewWhileRunning": false,
         "startCountdownOnControlMessage": false,
         "x": 870,
@@ -8655,6 +8687,7 @@
         "outputField": "payload",
         "timeZone": "",
         "persistDynamic": false,
+        "storeName": "",
         "commandResponseMsgOutput": "output1",
         "outputs": 1,
         "options": [
@@ -9186,7 +9219,7 @@
         "z": "128ab3134a54f6b4",
         "g": "b3fca1f0.1e5ef8",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10333,7 +10366,7 @@
         ]
     },
     {
-        "id": "149974cc4e184176",
+        "id": "28322a69fb804caa",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10363,7 +10396,7 @@
         ]
     },
     {
-        "id": "d89932a1047449c6",
+        "id": "9d4f10d1d0e7460d",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10393,7 +10426,7 @@
         ]
     },
     {
-        "id": "dfd73ecbe81941ea",
+        "id": "0068b0f46ff247b9",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10423,7 +10456,7 @@
         ]
     },
     {
-        "id": "365270510b3b48f0",
+        "id": "44e09c500a1f424d",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10453,7 +10486,7 @@
         ]
     },
     {
-        "id": "ac87c94e236d42ea",
+        "id": "ead0317af05f4fab",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10483,7 +10516,7 @@
         ]
     },
     {
-        "id": "e063f71137974d26",
+        "id": "fc68fd98e39d47c3",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10513,7 +10546,7 @@
         ]
     },
     {
-        "id": "1b2749428135428b",
+        "id": "285ea6d8d2bd4a50",
         "type": "inject",
         "z": "128ab3134a54f6b4",
         "g": "6aa9beecbf5f8d23",
@@ -10564,7 +10597,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 210,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "1d76854dfbb20b18",
@@ -10750,17 +10783,24 @@
         "label": "msgs/1 min",
         "order": 2,
         "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
+        "category": "",
+        "categoryType": "none",
         "xAxisLabel": "",
         "xAxisProperty": "",
-        "xAxisPropertyType": "msg",
+        "xAxisPropertyType": "property",
         "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
         "yAxisLabel": "",
         "yAxisProperty": "",
+        "yAxisPropertyType": "property",
         "ymin": "",
         "ymax": "",
+        "bins": "",
         "action": "append",
+        "stackSeries": false,
         "pointShape": "circle",
         "pointRadius": 4,
         "showLegend": false,
@@ -10778,9 +10818,18 @@
             "#9467bd",
             "#c5b0d5"
         ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
         "width": "3",
         "height": "4",
         "className": "",
+        "interpolation": "linear",
         "x": 710,
         "y": 740,
         "wires": [
@@ -10796,17 +10845,24 @@
         "label": "msgs/1 min",
         "order": 2,
         "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
+        "category": "",
+        "categoryType": "none",
         "xAxisLabel": "",
         "xAxisProperty": "",
-        "xAxisPropertyType": "msg",
+        "xAxisPropertyType": "property",
         "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
         "yAxisLabel": "",
         "yAxisProperty": "",
+        "yAxisPropertyType": "property",
         "ymin": "",
         "ymax": "",
+        "bins": "",
         "action": "append",
+        "stackSeries": false,
         "pointShape": "circle",
         "pointRadius": 4,
         "showLegend": false,
@@ -10824,9 +10880,18 @@
             "#9467bd",
             "#c5b0d5"
         ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
         "width": "3",
         "height": "4",
         "className": "",
+        "interpolation": "linear",
         "x": 710,
         "y": 820,
         "wires": [
@@ -10852,7 +10917,8 @@
                 "8b1ddd1b6076a4ec"
             ],
             [
-                "592a8d12e0705ea8"
+                "592a8d12e0705ea8",
+                "d6346d3c9c569c45"
             ],
             [
                 "66868163a2a87a21"
@@ -10897,7 +10963,9 @@
         "className": "",
         "x": 710,
         "y": 780,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "7897e5f9d24d31a3",
@@ -10942,7 +11010,9 @@
         "className": "",
         "x": 710,
         "y": 700,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "8cb87649afd62fd8",
@@ -11021,17 +11091,24 @@
         "label": "B/1 min",
         "order": 3,
         "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
+        "category": "",
+        "categoryType": "none",
         "xAxisLabel": "",
         "xAxisProperty": "",
-        "xAxisPropertyType": "msg",
+        "xAxisPropertyType": "property",
         "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
         "yAxisLabel": "",
         "yAxisProperty": "",
+        "yAxisPropertyType": "property",
         "ymin": "",
         "ymax": "",
+        "bins": "",
         "action": "append",
+        "stackSeries": false,
         "pointShape": "circle",
         "pointRadius": 4,
         "showLegend": false,
@@ -11049,9 +11126,18 @@
             "#9467bd",
             "#c5b0d5"
         ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
         "width": "3",
         "height": "4",
         "className": "",
+        "interpolation": "linear",
         "x": 710,
         "y": 860,
         "wires": [
@@ -11090,7 +11176,9 @@
         "className": "",
         "x": 870,
         "y": 440,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "dd785b1b24fb2af7",
@@ -11194,6 +11282,23 @@
         "statusType": "auto",
         "x": 1030,
         "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d6346d3c9c569c45",
+        "type": "debug",
+        "z": "1543d308b342690a",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 660,
         "wires": []
     },
     {
@@ -13594,7 +13699,7 @@
         "type": "debug",
         "z": "76d11e83ac083a40",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15782,7 +15887,7 @@
         "type": "debug",
         "z": "76d11e83ac083a40",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -19355,7 +19460,9 @@
         "wires": [
             [
                 "df87d57677a6f032",
-                "fb3e71eabb8d95f5"
+                "fb3e71eabb8d95f5",
+                "4f1a3bf17505e244",
+                "717054d7186f0991"
             ]
         ]
     },
@@ -19851,7 +19958,7 @@
         "page": "",
         "ui": "",
         "name": "asset",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "head": "",
@@ -19877,7 +19984,7 @@
         "name": "RunningPlatform/Overview",
         "order": 8,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card append-icon=\"mdi-server\" size=\"x-large\" subtitle=\"\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">Running Platform</span>\n    </template>\n    <v-list>\n      <v-list-subheader></v-list-subheader>\n      <v-list-item v-for=\"(item, i) in items\" color=\"primary\">\n        <template v-slot:prepend>\n          <v-icon :icon=\"item.icon\" size=\"x-large\"></v-icon>\n        </template>\n        <v-list-item-title v-text=\"item.text\"></v-list-item-title>\n      </v-list-item>\n    </v-list>\n  </v-card>\n</template>\n<script>\n  export default {\n    data: () => ({\n        items: [\n          { text: 'Real-Time', icon: 'mdi-clock' },\n        { text: 'Audience', icon: 'mdi-account' },\n        { text: 'Conversions', icon: 'mdi-flag' },]\n\n    }),\n    watch: {\n      msg: function () {\n        this.items = this.msg.items;\n      }\n    }\n  }\n</script>",
         "storeOutMessages": true,
@@ -19923,7 +20030,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n  <v-card append-icon=\"mdi-file-tree\" subtitle=\"\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:200px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">AAS Environment</span>\n    </template>\n    <v-treeview :items=\"items\" item-key=\"name\" open-on-click>\n      <template v-slot:prepend=\"{ item, open }\">\n        <v-icon v-if=\"!item.file\">\n          {{ open ? 'mdi-folder-open' : 'mdi-folder' }}\n        </v-icon>\n        <v-icon v-else>\n          {{ files[item.file] }}\n          <!--<router-link :to=\"item.to\">{{ item.title }}</router-link>!-->\n        </v-icon>\n        <div style=\"margin-left: 15%\">\n          <router-link v-if=\"item.to && !item.to.includes('http')\" :to=\"item.to\" target=\"_blank\">{{item.to}}\n          </router-link>\n          <!-- Use <a> tag if item.to contains 'http' -->\n          <a v-else-if=\"item.to && (item.to.includes('http') || item.to.includes('https'))\" :href=\"item.to\" target=\"_blank\" rel=\"noopener noreferrer\">\n            {{ item.to }}\n          </a>\n        </div>\n        <!--<div><a v-if=\"item.to.includes('http')\" :href=\"item.to\">{{item.to}} </a></div>!-->\n      </template>\n    </v-treeview>\n  </v-card>\n</template>\n\n<script>\n  export default {\n    data: function () {\n      return {\n        files: {\n          txt: 'mdi-file-document-outline'\n        },\n        items: []\n      }\n    },\n    watch: {\n      msg: function () {\n        this.items = this.msg.items;\n      }\n    }\n  }\n</script>",
+        "format": "<template>\n  <v-card append-icon=\"mdi-file-tree\" subtitle=\"\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:200px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">AAS Environment</span>\n    </template>\n    <v-treeview v-model:opened=\"open\" :items=\"items\" :hide-actions=\"true\" :indent-lines=\"true\" item-value=\"id\" open-on-click>\n      <template v-slot:prepend=\"{ item, isOpen }\">\n        <v-icon v-if=\"!item.file\" :icon=\"isOpen ? 'mdi-folder-open' : 'mdi-folder'\">\n        </v-icon>\n        <v-icon v-else :icon=\"files[item.file]\">\n          <!--<router-link :to=\"item.to\">{{ item.title }}</router-link>!-->\n        </v-icon>\n        <div style=\"margin-left: 15%\">\n          <router-link v-if=\"item.to && !item.to.includes('http')\" :to=\"item.to\" target=\"_blank\">{{item.to}}\n          </router-link>\n          <!-- Use <a> tag if item.to contains 'http' -->\n          <a v-else-if=\"item.to && (item.to.includes('http') || item.to.includes('https'))\" :href=\"item.to\" target=\"_blank\" rel=\"noopener noreferrer\">\n            {{ item.to }}\n          </a>\n        </div>\n        <!--<div><a v-if=\"item.to.includes('http')\" :href=\"item.to\">{{item.to}} </a></div>!-->\n      </template>\n    </v-treeview>\n  </v-card>\n</template>\n\n<script>\n  export default {\n    data: function () {\n      return {\n        files: {\n          txt: 'mdi-file-document-outline'\n        },\n        items: []\n      }\n    },\n    watch: {\n      msg: function () {\n        this.items = this.msg.items;\n      }\n    }\n  }\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -20172,7 +20279,7 @@
         "name": "counters 2.0",
         "order": 3,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card append-icon=\"mdi-counter\" size=\"x-large\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">Counters</span>\n    </template>\n    <div class=\"text-left\">\n      <v-chip class=\"ma-2\" color=\"indigo\" prepend-icon=\"mdi-checkbox-marked-circle\" size=\"x-large\">\n        Asset Administration Shells: {{ msg.payload && msg.payload[1]\n        && msg.payload[1].assetAdministrationShells ?\n        msg.payload[1].assetAdministrationShells.length : 0 }}\n      </v-chip>\n\n      <v-chip prepend-icon=\"mdi-checkbox-marked-circle\" class=\"ma-2\" color=\"primary\" size=\"x-large\">\n        Submodels: {{ msg.payload && msg.payload[1]\n        && msg.payload[1].submodels ? msg.payload[1].submodels.length : 0 }}\n      </v-chip>\n\n      <v-chip class=\"ma-2\" color=\"green\" prepend-icon=\"mdi-checkbox-marked-circle\" size=\"x-large\">\n        Submodel Elements: {{ msg.payload && msg.payload[1]\n        && msg.payload[1].submodels ?\n        msg.payload[1].submodels.reduce((sum, submodel) => sum + (submodel.submodelElements ?\n        submodel.submodelElements.length : 0), 0) : 0 }}\n      </v-chip>\n\n      <v-chip class=\"ma-2\" color=\"teal\" prepend-icon=\"mdi-checkbox-marked-circle\" size=\"x-large\">\n        Concept Descriptions: {{ msg.original && msg.original[1] && msg.original[1].conceptDescriptions ?\n        msg.original[1].conceptDescriptions.length : 0 }}</b></p>\n      </v-chip>\n    </div>\n\n      <v-chip prepend-icon=\"mdi-checkbox-marked-circle\" class=\"ma-2\" color=\"orange\" size=\"x-large\">\n        Asset Info: {{ msg.payload && msg.payload[1]\n        && msg.payload[1].assetAdministrationShells ?\n        msg.payload[1].assetAdministrationShells.length : 0 }}\n      </v-chip>\n\n  </v-card>\n</template>",
         "storeOutMessages": true,
@@ -20340,7 +20447,7 @@
         "name": "qrcode 2.0",
         "order": 6,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card append-icon=\"mdi-counter\" size=\"x-large\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">QR code to code repo</span>\n    </template>\n    <div style=\"display: flex; justify-content: center; align-items: center; padding: 1%;\">\n      <v-img :width=\"300\" aspect-ratio=\"16/9\" cover :src=\"msg.qrcode\"></v-img>\n    </div>\n\n\n  </v-card>\n</template>",
         "storeOutMessages": true,
@@ -20376,7 +20483,7 @@
         "type": "function",
         "z": "32c5a22a534a4588",
         "name": "Generate Tree from AAS model V3",
-        "func": "function extractData(submodelElements, items, rootName) {\n  function getRandomNumber() {\n    return Math.floor(Math.random() * 2001) + 10000;\n  }\n\n  for (let submodelElementIndex = 0; submodelElementIndex < submodelElements.length; submodelElementIndex++) {\n    let submodelElement = submodelElements[submodelElementIndex];\n\n    if (submodelElement.modelType !== \"SubmodelElementCollection\" && submodelElement.modelType !== \"SubmodelElementList\") {\n      let propertyItem = { title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n      if (rootName === \"Value\") {\n        propertyItem.title = \"Value: [\" + submodelElementIndex + \"]\";\n      }\n      //if(submodelElement.modelType !== \"BasicEventElement\")\n      //  propertyItem.children.push({ file: 'txt', title: \"category: \" + submodelElement.category });\n\n      propertyItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n\n      // Check if valueType is defined\n      if (submodelElement.valueType) {\n        propertyItem.children.push({ file: 'txt', title: \"valueType: \" + submodelElement.valueType });\n      } else {\n        //propertyItem.children.push({ file: 'txt', title: \"valueType: undefined\" });\n      }\n\n      propertyItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n      if (submodelElement.modelType == \"BasicEventElement\") {\n        let path = \"\";\n        let keys = submodelElement.observed.keys;\n        //for(let key = 0; key < keys.length; key++){\n        //  path = path + keys[key].value + \",\";\n        //}\n        path = keys[keys.length - 1].value;\n        propertyItem.children.push({ file: 'txt', title: \"observed: \" + path });\n      }\n\n      if (submodelElement.modelType == \"File\") {\n        propertyItem.children.push({ file: 'txt', to: submodelElement.value });\n      } else if (\"value\" in submodelElement && submodelElement.modelType === \"Property\") {\n        const trueLength = isIterable(submodelElement.value) ? [...submodelElement.value].length : 0;\n        if (trueLength < 100) {\n          propertyItem.children.push({ file: 'txt', title: \"Value: \" + submodelElement.value });\n        }\n      } else if (submodelElement.modelType == \"MultiLanguageProperty\") {\n        msg.debug = \"entrei\";\n        let elementValue = submodelElement.value;\n        if (Array.isArray(elementValue)) {\n          for (let valueIndex = 0; valueIndex < elementValue.length; valueIndex++) {\n            let propertyValueItem = { title: \"Value: [\" + valueIndex + \"]\", children: [] };\n            propertyValueItem.children.push({ file: 'txt', title: \"Language: \" + submodelElement.value[valueIndex].language });\n            propertyValueItem.children.push({ file: 'txt', title: \"Text: \" + submodelElement.value[valueIndex].text })\n            propertyItem.children.push(propertyValueItem);\n          }\n        } else {\n          propertyItem.children.push({ file: 'txt', title: \"Value: \" + submodelElement.value });\n        }\n      }\n      items.push(propertyItem);\n\n    } else if (submodelElement.modelType === \"SubmodelElementCollection\") {\n      let collectionItem = { title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n      if (rootName === \"Value\" || rootName === \"Element\")\n        collectionItem.title = rootName + \": [\" + submodelElementIndex + \"]\";\n\n      collectionItem.children.push({ file: 'txt', title: \"category: \" + submodelElement.category });\n      //collectionItem.children.push({ file: 'txt', title: \"id: \" + submodelElement.id });\n      collectionItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n      collectionItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n      items.push(collectionItem);\n      if (typeof submodelElement.value != \"undefined\") {\n        extractData(submodelElement.value, collectionItem.children, \"Value\");\n      }\n    } else {\n      let listItem = { title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n      if (rootName === \"Value\")\n        listItem.title = \"Value: [\" + submodelElementIndex + \"]\";\n      listItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n      listItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n      items.push(listItem);\n      if (typeof submodelElement.value != \"undefined\") {\n        extractData(submodelElement.value, listItem.children, \"Element\");\n      }\n    }\n  }\n\n\n  return;\n}\n\nfunction filterListByCondition(list1, list2) {\n  // Create a set of IDs from list2 for quick lookup\n  const idSet = new Set(list2.map(item => item.keys[0].value));\n\n  // Filter the elements of list1 based on the presence of the same id in list2\n  return list1.filter(item => idSet.has(item.id));\n}\n\nfunction isIterable(value) {\n  return value != null && typeof value[Symbol.iterator] === 'function';\n}\n\nmsg.properties = [];\nmsg.collections = [];\n\nlet items = [];\nlet item = { title: \"\", children: [] };\nlet children = { title: \"\" };\n\nlet manifest = msg.payload[1];\nlet aass = manifest.assetAdministrationShells;\n\n// Iterate over aas\nfor (let aasIndex = 0; aasIndex < aass.length; aasIndex++) {\n  let item = {};\n  item.title = \"Asset Administration Shell: [\" + aasIndex + \"]\";\n  item.children = [];\n\n  item.children.push({ file: 'txt', title: \"idShort: \" + aass[aasIndex].idShort });\n  item.children.push({ file: 'txt', title: \"id: \" + aass[aasIndex].id });\n  item.children.push({ file: 'txt', title: \"assetInformation: \" + aass[aasIndex].assetInformation.globalAssetId });\n\n  let submodelsItem = {};\n  submodelsItem.title = \"Submodels\";\n  submodelsItem.children = [];\n\n  // Iterate over submodels\n  let submodels = manifest.submodels;\n  let submodelReferences = aass[aasIndex].submodels;\n\n  // Iterate over references\n  let result = filterListByCondition(submodels, submodelReferences);\n  msg.result = result;\n\n  for (let resultIndex = 0; resultIndex < result.length; resultIndex++) {\n    let submodelItem = {};\n    submodelItem.title = \"Submodel: [\" + resultIndex + \"]\";\n    submodelItem.children = [];\n\n    submodelItem.children.push({ file: 'txt', title: \"idShort: \" + result[resultIndex].idShort });\n    submodelItem.children.push({ file: 'txt', title: \"id: \" + result[resultIndex].id });\n    if (typeof result[resultIndex].semanticId != \"undefined\") {\n      if (result[resultIndex].semanticId.keys.length > 0) {\n        submodelItem.children.push({ file: 'txt', title: \"Semantic Id: \" + result[resultIndex].semanticId.keys[0].value });\n      }\n    }\n\n    let submodelElementsItem = { title: \"SubmodelElements\", children: [] };\n    submodelItem.children.push(submodelElementsItem);\n\n    let submodelElements = result[resultIndex].submodelElements;\n\n    msg.collections.push(submodelElements);\n    extractData(submodelElements, submodelElementsItem.children);\n    submodelsItem.children.push(submodelItem);\n  }\n\n  item.children.push(submodelsItem);\n  items.push(item);\n}\n\nmsg.items = items;\n\nreturn msg;",
+        "func": "// Helper functions\nfunction filterListByCondition(list1, list2) {\n  const idSet = new Set(list2.map(item => item.keys[0].value));\n  return list1.filter(item => idSet.has(item.id));\n}\n\nfunction isIterable(value) {\n  return value != null && typeof value[Symbol.iterator] === 'function';\n}\n\nfunction extractData(idCounter, submodelElements, items, rootName) {\n  for (let submodelElementIndex = 0; submodelElementIndex < submodelElements.length; submodelElementIndex++) {\n    let submodelElement = submodelElements[submodelElementIndex];\n\n    if (submodelElement.modelType !== \"SubmodelElementCollection\" && submodelElement.modelType !== \"SubmodelElementList\") {\n      let propertyItem = { id: (++idCounter.value).toString(), title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n\n      if (rootName === \"Value\") {\n        propertyItem.title = \"Value: [\" + submodelElementIndex + \"]\";\n        propertyItem.id = (++idCounter.value).toString();\n      }\n\n      propertyItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n\n      if (submodelElement.valueType) {\n        propertyItem.children.push({ file: 'txt', title: \"valueType: \" + submodelElement.valueType });\n      }\n\n      propertyItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n\n      if (submodelElement.modelType === \"BasicEventElement\") {\n        let path = submodelElement.observed.keys.at(-1).value;\n        propertyItem.children.push({ file: 'txt', title: \"observed: \" + path });\n      }\n\n      if (submodelElement.modelType === \"File\") {\n        propertyItem.children.push({ id: (++idCounter.value).toString(), file: 'txt', to: submodelElement.value });\n      } else if (\"value\" in submodelElement && submodelElement.modelType === \"Property\") {\n        const trueLength = isIterable(submodelElement.value) ? [...submodelElement.value].length : 0;\n        if (trueLength < 100) {\n          propertyItem.children.push({ file: 'txt', title: \"Value: \" + submodelElement.value });\n        }\n      } else if (submodelElement.modelType === \"MultiLanguageProperty\") {\n        let elementValue = submodelElement.value;\n        if (Array.isArray(elementValue)) {\n          for (let valueIndex = 0; valueIndex < elementValue.length; valueIndex++) {\n            let propertyValueItem = { id: (++idCounter.value).toString(), title: \"Value: [\" + valueIndex + \"]\", children: [] };\n            propertyValueItem.children.push({ file: 'txt', title: \"Language: \" + elementValue[valueIndex].language });\n            propertyValueItem.children.push({ file: 'txt', title: \"Text: \" + elementValue[valueIndex].text });\n            propertyItem.children.push(propertyValueItem);\n          }\n        } else {\n          propertyItem.children.push({ file: 'txt', title: \"Value: \" + elementValue });\n        }\n      }\n\n      items.push(propertyItem);\n\n    } else if (submodelElement.modelType === \"SubmodelElementCollection\") {\n      let collectionItem = { id: (++idCounter.value).toString(), title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n      if (rootName === \"Value\" || rootName === \"Element\") {\n        collectionItem.title = rootName + \": [\" + submodelElementIndex + \"]\";\n      }\n\n      collectionItem.children.push({ file: 'txt', title: \"category: \" + submodelElement.category });\n      collectionItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n      collectionItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n\n      items.push(collectionItem);\n\n      if (typeof submodelElement.value !== \"undefined\") {\n        extractData(idCounter, submodelElement.value, collectionItem.children, \"Value\");\n      }\n\n    } else {\n      let listItem = { id: (++idCounter.value).toString(), title: \"SubmodelElement: [\" + submodelElementIndex + \"]\", children: [] };\n      if (rootName === \"Value\") {\n        listItem.title = \"Value: [\" + submodelElementIndex + \"]\";\n        listItem.id = (++idCounter.value).toString();\n      }\n\n      listItem.children.push({ file: 'txt', title: \"idShort: \" + submodelElement.idShort });\n      listItem.children.push({ file: 'txt', title: \"modelType: \" + submodelElement.modelType });\n\n      items.push(listItem);\n\n      if (typeof submodelElement.value !== \"undefined\") {\n        extractData(idCounter, submodelElement.value, listItem.children, \"Element\");\n      }\n    }\n  }\n}\n\n// Main logic\nmsg.properties = [];\nmsg.collections = [];\n\nlet idCounter = { value: 0 };\nlet items = [];\nlet manifest = msg.payload[1];\nlet aass = manifest.assetAdministrationShells;\n\nfor (let aasIndex = 0; aasIndex < aass.length; aasIndex++) {\n  let item = {\n    id: idCounter.value.toString(),\n    title: \"Asset Administration Shell: [\" + aasIndex + \"]\",\n    children: []\n  };\n\n  item.children.push({ file: 'txt', title: \"idShort: \" + aass[aasIndex].idShort });\n  item.children.push({ file: 'txt', title: \"id: \" + aass[aasIndex].id });\n  item.children.push({ file: 'txt', title: \"assetInformation: \" + aass[aasIndex].assetInformation.globalAssetId });\n\n  let submodelsItem = {\n    id: (++idCounter.value).toString(),\n    title: \"Submodels\",\n    children: []\n  };\n\n  let submodels = manifest.submodels;\n  let submodelReferences = aass[aasIndex].submodels;\n  let result = filterListByCondition(submodels, submodelReferences);\n  msg.result = result;\n\n  for (let resultIndex = 0; resultIndex < result.length; resultIndex++) {\n    let submodelItem = {\n      id: (++idCounter.value).toString(),\n      title: \"Submodel: [\" + resultIndex + \"]\",\n      children: []\n    };\n\n    submodelItem.children.push({ file: 'txt', title: \"idShort: \" + result[resultIndex].idShort });\n    submodelItem.children.push({ file: 'txt', title: \"id: \" + result[resultIndex].id });\n\n    if (typeof result[resultIndex].semanticId !== \"undefined\" && result[resultIndex].semanticId.keys.length > 0) {\n      submodelItem.children.push({ file: 'txt', title: \"Semantic Id: \" + result[resultIndex].semanticId.keys[0].value });\n    }\n\n    let submodelElementsItem = {\n      id: (++idCounter.value).toString(),\n      title: \"SubmodelElements\",\n      children: []\n    };\n\n    submodelItem.children.push(submodelElementsItem);\n\n    let submodelElements = result[resultIndex].submodelElements;\n    msg.collections.push(submodelElements);\n    extractData(idCounter, submodelElements, submodelElementsItem.children);\n\n    submodelsItem.children.push(submodelItem);\n  }\n\n  item.children.push(submodelsItem);\n  items.push(item);\n}\n\nmsg.items = items;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -20401,7 +20508,7 @@
         "name": "Logo",
         "order": 1,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card size=\"x-large\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <div style=\"display: flex; justify-content: center; align-items: center; padding: 1%\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" :width=\"500\" viewBox=\"0 0 3248 1077\" \n      style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\">\n        <path class=\"fil0\"\n          d=\"M1611 533l-128 321 -107 -271 0 0c-83,-188 -270,-319 -488,-319 -130,0 -248,46 -340,123l97 97c67,-53 151,-84 243,-84 163,0 304,100 364,242l0 -1 177 419 109 0 222 -527 -149 0zm-1611 527l0 -527 137 0 252 322 0 -322 137 0 0 527 -137 0 -252 -322 0 322 -137 0zm2917 -158c30,28 74,54 121,54 28,0 45,-9 54,-18 7,-8 13,-20 13,-34 0,-10 -4,-22 -15,-31 -14,-12 -34,-18 -68,-28l-36 -11c-22,-7 -54,-19 -76,-43 -27,-29 -30,-66 -30,-93 0,-65 25,-105 48,-128 27,-27 72,-50 136,-50 52,0 113,17 163,43l-55 107c-41,-32 -72,-36 -90,-36 -13,0 -32,4 -45,16 -8,8 -14,17 -14,29 0,9 2,16 8,23 4,5 13,15 45,24l42 13c34,10 69,22 96,52 27,29 34,58 34,94 0,49 -12,95 -50,133 -45,45 -99,54 -156,54 -33,0 -64,-3 -103,-17 -9,-3 -42,-16 -80,-42l58 -111zm-482 158l-144 0 202 -527 150 0 198 527 -146 0 -128 -364 -132 364zm-564 0l-145 0 203 -527 149 0 199 527 -146 0 -129 -364 -131 364z\" />\n        <path class=\"fil1\"\n          d=\"M1208 330l123 -91c0,-2 0,-3 0,-4 2,-24 24,-42 48,-40 24,2 42,23 40,48 -2,24 -24,42 -48,40 -3,-1 -5,-1 -8,-2l-111 83c-14,-12 -29,-23 -44,-34zm338 69c-2,25 -23,42 -48,40l-101 111c-8,-16 -17,-33 -27,-49l89 -97c-1,-4 -1,-8 -1,-12 2,-25 24,-42 48,-40 24,2 42,23 40,47zm-658 544c-81,0 -147,-66 -147,-147 0,-81 66,-146 147,-146 81,0 146,65 146,146 0,81 -65,147 -146,147zm147 -486l-88 64c-1,0 -2,0 -3,1 -18,-4 -37,-6 -56,-6 -155,0 -281,125 -281,280 0,155 126,281 281,281 152,0 275,-121 280,-271l39 -44 42 -46c-26,-117 -107,-213 -214,-259zm726 -389c-28,-34 -68,-55 -111,-61 8,12 12,27 10,43 0,5 -1,9 -2,13 24,6 46,20 62,39 21,25 31,56 28,88 -4,39 -26,72 -57,92 -6,-5 -13,-8 -21,-8 -25,-3 -46,15 -48,40 -2,24 16,45 40,47 20,2 37,-9 44,-27 52,-26 89,-77 95,-139 4,-46 -10,-91 -40,-127zm-165 243c1,-5 2,-10 3,-14 -57,-14 -97,-68 -92,-128 3,-32 18,-62 43,-82 4,-4 8,-7 13,-9 6,5 15,9 24,10 24,2 46,-16 48,-40 2,-24 -16,-46 -40,-48 -18,-1 -34,8 -42,23 -13,6 -26,14 -37,23 -36,30 -57,72 -62,118 -8,93 59,176 151,188 -7,-12 -10,-26 -9,-41zm1005 -17c-2,16 -15,27 -31,28 -1,0 -1,0 -2,0 -1,0 -2,0 -4,0 -17,-2 -30,-18 -28,-36 2,-18 19,-31 37,-29 0,0 0,0 0,0l0 0c18,3 30,19 28,37zm53 -4c0,-43 -32,-79 -75,-85 -1,0 -3,0 -4,0l0 0 -679 -143c-6,-14 -19,-24 -34,-26 -24,-3 -46,14 -50,38 -3,25 15,47 39,50 12,1 24,-3 33,-10l614 129c-7,10 -12,23 -14,36 0,4 0,7 0,11l0 0 0 24 -602 -53c-7,-10 -18,-18 -32,-20 -24,-3 -46,14 -49,39 -3,24 14,46 38,49 15,2 29,-4 39,-15l606 53 0 135 52 0 0 -130 18 1c1,1 2,1 4,1 15,2 30,0 43,-6l0 134 53 0 0 -212 0 0zm-1723 510c-2,25 -23,42 -47,40 -24,-2 -42,-23 -40,-47 2,-25 23,-43 48,-40 24,2 42,23 39,47z\" />\n        </svg>\n    </div>\n  </v-card>\n</template>\n<style>\n  .fil0 {\n    fill: #3456A1\n  }\n  .fil1 {\n    fill: #000000\n  }\n</style>",
         "storeOutMessages": true,
@@ -20526,6 +20633,47 @@
                 "09c675c2a2ee0d9c"
             ]
         ]
+    },
+    {
+        "id": "4f1a3bf17505e244",
+        "type": "ui-template",
+        "z": "32c5a22a534a4588",
+        "group": "2d91686a2ba1852c",
+        "page": "",
+        "ui": "",
+        "name": "nameplate",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<template>\n    <div>\n\n        <div id=\"asset-nameplate\" v-if=\"nameplate\" class=\"nameplate\">\n            <!-- Screws -->\n            <div class=\"screw tl\"></div>\n            <div class=\"screw tr\"></div>\n            <div class=\"screw bl\"></div>\n            <div class=\"screw br\"></div>\n            <div class=\"header-row\">\n                <h2>\n                    {{productDesignation}}\n                </h2>\n                <v-img v-if=\"logoUrl\" :src=\"logoUrl\" alt=\"Logo\" width=\"24\" height=\"24\" contain class=\"logo-inline\" />\n\n            </div>\n            <p><strong>Manufacturer:</strong> {{ manufacturerName }}</p>\n            <p><strong>Street:</strong> {{ street }}</p>\n            <p><strong>Zip Code:</strong> {{ zipCode }}</p>\n            <p><strong>City Town:</strong> {{ cityTown }}</p>\n            <p><strong>National Code:</strong> {{ nationalCode }}</p>\n            <p><strong>Product Family:</strong> {{ productFamily }}</p>\n            <p><strong>Year of Construction:</strong> {{ yearOfConstruction }}</p>\n\n        </div>\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n            // define variables available component-wide\n            // (in <template> and component functions)\n            return {\n                nameplate: false,\n                productDesignation: \"\",\n                manufacturerName: \"\",\n                productFamily: \"\",\n                yearOfConstruction: \"\", \n                street: \"\",\n                zipCode: \"\",\n                cityTown: \"\",\n                nationalCode: \"\",\n                logoUrl: \"\"\n            }\n        },\n        watch: {\n            // watch for any changes of \"count\"\n            msg: function () {\n                for(let element of this.msg.payload){\n                    if(element.submodels){\n                        for(let submodel of element.submodels){\n                            if(submodel.idShort.includes(\"Nameplate\")){\n                                this.nameplate = true;\n                                for(let submodelElement of submodel.submodelElements){\n                                    if(submodelElement.idShort === \"ManufacturerName\"){\n                                        this.manufacturerName = submodelElement.value[0].text;\n                                    } else if(submodelElement.idShort === \"Address\"){\n                                        this.street = submodelElement.value[1].value[0].text;\n                                        this.zipCode = submodelElement.value[2].value[0].text;\n                                        this.cityTown = submodelElement.value[5].value[0].text;\n                                        this.nationalCode = submodelElement.value[7].value[0].text;\n                                    } else if(submodelElement.idShort === \"ManufacturerProductDesignation\"){\n                                        this.productDesignation = submodelElement.value[0].text;\n                                    } else if (submodelElement.idShort === \"ManufacturerProductFamily\"){\n                                        this.productFamily = submodelElement.value[0].text;\n                                    } else if (submodelElement.idShort === \"YearOfConstruction\"){\n                                        this.yearOfConstruction = submodelElement.value;\n                                    } else if (submodelElement.idShort === \"Markings\"){\n                                        for(let marking of submodelElement.value){\n                                            if(marking.idShort == \"logo\"){\n                                                   this.logoUrl = marking.value[1].value;\n                                            }\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        },\n        mounted() {\n            // code here when the component is first loaded\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>\n<style scoped>\n    .nameplate {\n        width: 480px;\n        padding: 2em;\n        margin: 40px auto;\n        border-radius: 8px;\n        color: #111;\n        font-family: 'Segoe UI', sans-serif;\n        background:\n            linear-gradient(145deg, #d4d4d4, #f0f0f0),\n            repeating-linear-gradient(45deg, #f0f0f0 0px, #e0e0e0 2px, #f0f0f0 4px);\n        background-blend-mode: overlay;\n        box-shadow:\n            inset 0 0 5px rgba(255, 255, 255, 0.6),\n            inset 0 0 15px rgba(0, 0, 0, 0.1),\n            0 2px 4px rgba(0, 0, 0, 0.2);\n        border: 1px solid #aaa;\n        position: relative;\n    }\n\n    .header-row {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        margin-bottom: 1em;\n    }\n\n    .logo-inline {\n        margin-left: 12px;\n    }\n\n\n    .screw {\n        position: absolute;\n        width: 12px;\n        height: 12px;\n        background: radial-gradient(circle at 30% 30%, #666, #222);\n        border-radius: 50%;\n        box-shadow: inset 0 0 2px #000;\n    }\n\n    .screw.tl {\n        top: 8px;\n        left: 8px;\n    }\n\n    .screw.tr {\n        top: 8px;\n        right: 8px;\n    }\n\n    .screw.bl {\n        bottom: 8px;\n        left: 8px;\n    }\n\n    .screw.br {\n        bottom: 8px;\n        right: 8px;\n    }\n\n    .nameplate h2 {\n        margin: 0 0 0.4em 0;\n        font-size: 1.4em;\n        font-weight: 600;\n        text-shadow: 1px 1px 1px #fff;\n    }\n\n    .nameplate p {\n        margin: 0.25em 0;\n        font-size: 0.95em;\n        color: #333;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 3190,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "717054d7186f0991",
+        "type": "debug",
+        "z": "32c5a22a534a4588",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3180,
+        "y": 440,
+        "wires": []
     },
     {
         "id": "f08e4446f8c56866",
@@ -22081,7 +22229,7 @@
         "page": "",
         "ui": "",
         "name": "asset",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "head": "",
@@ -22107,7 +22255,7 @@
         "name": "RunningPlatform/Overview",
         "order": 7,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card append-icon=\"mdi-server\" size=\"x-large\" subtitle=\"\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">Running Platform</span>\n    </template>\n    <v-list>\n      <v-list-subheader></v-list-subheader>\n      <v-list-item v-for=\"(item, i) in items\" color=\"primary\">\n        <template v-slot:prepend>\n          <v-icon :icon=\"item.icon\" size=\"x-large\"></v-icon>\n        </template>\n        <v-list-item-title v-text=\"item.text\"></v-list-item-title>\n      </v-list-item>\n    </v-list>\n  </v-card>\n</template>\n<script>\n  export default {\n    data: () => ({\n        items: [\n          { text: 'Real-Time', icon: 'mdi-clock' },\n        { text: 'Audience', icon: 'mdi-account' },\n        { text: 'Conversions', icon: 'mdi-flag' },]\n\n    }),\n    watch: {\n      msg: function () {\n        this.items = this.msg.items;\n      }\n    }\n  }\n</script>",
         "storeOutMessages": true,
@@ -22590,7 +22738,7 @@
         "name": "qrcode 2.0",
         "order": 5,
         "width": "6",
-        "height": "1",
+        "height": "12",
         "head": "",
         "format": "<template>\n  <v-card append-icon=\"mdi-counter\" size=\"x-large\" style=\"padding: 1rem 1.25rem; margin-bottom: 3%; min-height:500px;\">\n    <template v-slot:title>\n      <span class=\"font-weight-black\">QR code to code repo</span>\n    </template>\n    <div style=\"display: flex; justify-content: center; align-items: center; padding: 1%;\">\n      <v-img :width=\"300\" aspect-ratio=\"16/9\" cover :src=\"msg.qrcode\"></v-img>\n    </div>\n\n\n  </v-card>\n</template>",
         "storeOutMessages": true,
