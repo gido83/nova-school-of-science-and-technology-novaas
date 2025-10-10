@@ -19159,7 +19159,7 @@
         "type": "unsafe-function",
         "z": "32c5a22a534a4588",
         "name": "detectBrowserReload",
-        "func": "var payload = msg.payload;\nif(payload === \"connect\"){\n    return msg;\n}\n\nreturn null;\n//context.flow.set('Body', \"\");",
+        "func": "var payload = msg.payload;\nif((payload === \"connect\" || payload === \"change\") && msg.tab == 0){\n    return msg;\n}\n\nreturn null;\n//context.flow.set('Body', \"\");",
         "outputs": 1,
         "noerr": 0,
         "x": 380,
