@@ -1,8 +1,9 @@
 FROM nikolaik/python-nodejs:python3.13-nodejs22-slim
 LABEL org.opencontainers.image.authors="gido@uninova.pt"
 ARG AAS_VERSION=V2
-RUN apt-get update && apt-get install -y apt-utils && apt install unzip && apt-get install -y git && apt install -y sqlite3 && apt-get install -y netcat-traditional && apt-get -y install jq \
-&& npm install -g --unsafe-perm node-red
+RUN apt-get update && \
+    apt-get install -y apt-utils unzip git sqlite3 netcat-traditional jq wget gnupg libatomic1 && \
+    npm install -g --unsafe-perm node-red
 WORKDIR /app
 RUN mkdir -p .node-red
 ADD files .node-red/
