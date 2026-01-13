@@ -1,12 +1,56 @@
-# NOVA Asset Administration Shell
+# NOVA Asset Administration Shell (NOVAAS)
 
-The NOVA Asset Administration Shell (NOVAAS) is an open source reference implementation and execution environment - developed by NOVA School of Science and Technology - for the Asset Administration Shell (AAS) concept proposed by the Reference Architectural Model for Industrie 4.0 (RAMI4.0). 
-The AAS implements the concept of the Digital Twin of a physical object turning it into an Industrie 4.0 component that facilitates interoperability in industrial applications.
+NOVA Asset Administration Shell (NOVAAS) is an open-source reference implementation and execution environment for the Asset Administration Shell (AAS) concept, developed by NOVA School of Science and Technology. It implements the AAS concept proposed by the Reference Architectural Model for Industrie 4.0 (RAMI4.0).
 
-This repository contains file that are needed to build a docker image for NOVAAS.
-In order to install and run it, dowload/clone the repository and build and run the dockerfile and/or the docker-compose file.
-The NOVAAS repository is preloaded with a set of files (documentation, asset, manifest) that are used to show the component. For creating a new specific NOVAAS these files need to be substituted with the proper ones.
-The docker-compose file has a set of environment variables that are used during both the build and deploy tasks. Especifically, NOVAAS provides retro compatibility with V2 aas metamodel, this option is the default option. If you want to laod NOVAAS with a V3 model it is important to set "AAS_VERSION" environment variables to the value of "V3".
+## Overview
+
+The AAS implements the concept of the Digital Twin of a physical object, transforming it into an Industrie 4.0 component that facilitates interoperability in industrial applications.
+
+## Getting Started
+
+### Prerequisites
+
+- Docker
+- Docker Compose (for docker-compose setup)
+- Git (for cloning the repository)
+
+### Installation
+
+This repository contains all necessary files to build a Docker image for NOVAAS. The repository comes preloaded with example files (documentation, assets, manifest) that demonstrate the component's functionality.
+
+#### Using Dockerfile
+
+1. Clone the repository:
+   ```bash
+   git clone https://gitlab.com/gidouninova/novaas.git
+   cd novaas
+   ```
+
+2. Build the Docker image:
+   ```bash
+   docker build --build-arg AAS_VERSION=V3 -t novaas:latest .
+   ```
+   
+   > **Note:** By default, NOVAAS provides backward compatibility with AAS V2 metamodel. To use V3, set the `AAS_VERSION` build argument to `V3` as shown above.
+
+3. Run the container:
+   ```bash
+   docker run -d \
+     --env PORT_FORWARDING=1872 \
+     --env HOST=localhost \
+     --env BROKER_SERVICE_HOST=localhost \
+     --env BROKER_SERVICE_PORT=1883 \
+     --env REPO_LOCATION=https://gitlab.com/novaas/catalog/nova-school-of-science-and-technology/novaas \
+     -p 1872:1880 \
+     novaas:latest
+   ```
+
+4. Access the NOVAAS dashboard at:
+   ```
+   http://localhost:1872/dashboard
+   ```
+
+   ![NOVAAS Main Screen](/source/images/novaas.jpg)
 
 ## Using dockerfile
 The docker command to create the NOVAAS image is the following:
@@ -23,75 +67,162 @@ http://localhost:1872/dashboard
 
 ![Semantic description of image](/source/images/novaas.jpg)"NOVAAS Main Screen"
 
-### Notes
-The two environmental variables are needed to properly configure the internal iFrame node that is used to expose in the ui the dashboards for each one of the internal data sources. Specifically, the $HOST environmental variable should be the ip address of the host machine where NOVAAS is deployed. Setting this variable to localhost will only expose the dash tab within the ui in the host.
+## Configuration
 
-The NOVAAS embeds an MQTT client for pushing out data. This client needs to be configured. To do that it is possible to access the NOVAAS backend by using the following link:
+### Environment Variables
 
+- `HOST`: The IP address of the host machine where NOVAAS is deployed. 
+  - **Important**: Using `localhost` will only expose the dashboard within the UI on the host machine.
+  
+- `BROKER_SERVICE_HOST`: Hostname or IP address of the MQTT broker.
+- `BROKER_SERVICE_PORT`: Port number for the MQTT broker (default: 1883).
+- `PORT_FORWARDING`: External port for accessing the NOVAAS interface (default: 1872).
+- `REPO_LOCATION`: URL to the NOVAAS catalog repository.
+
+### MQTT Configuration
+
+NOVAAS includes an embedded MQTT client for data publishing. You can configure it either:
+
+1. Through the web interface at `http://localhost:1872`
+2. Or by setting the environment variables mentioned above
+
+### Backend Access
+
+Access the NOVAAS backend at:
+```
 http://localhost:1872
+```
 
-or by properly configure the following environmental variables: i) $BROKER_SERVICE_HOST that is used to set-up the host where the mqtt broker is running; and ii) $BROKER_SERVICE_PORT that is used to set-up the port used by the mqtt broker. 
+Default login credentials:
+- **Username**: admin
+- **Password**: password
 
-![Semantic description of image](/source/images/aasAssetConnection.png)"NOVAAS Backend once user is logged in"
+> **Security Note**: Change these default credentials in production environments.
 
-To access the backend the user needs to insert username and password. These are the default username and password from the node-red settings file, namely:
-
-- username: admin
-- password: password
-
-
-
-## Using Docker-compose
-
-The docker-compose command is the following:
-
-`docker-compose up -d`
-
-To build and run the image. Furthermore, the command:
-
-`docker-compose build`
-
-can be used to build a new image. The started docker container will run on port 1872,however it is possible to change this behaviour by setting the environmental variables PORT_FORWARDING and HOST in the .env file.
-
-## Using the pre-built image
-
-An already built image is part of the repository and can be accessed here:
-
-https://gitlab.com/novaas/catalog/nova-school-of-science-and-technology/novaas/container_registry
-
-## Run another version of NOVAAS from this base folder
-
-NOVAAS has been designed in order to be as generic as possible, if you want to run your own version of the NOVAAS you should perform the following steps:
-1. Add the environment model file within the folder "files/". Note that the name of the file **must** be kept -> model.aasx. In particular this file follows the data model provided in https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html and can be created by using the aasx-package-explorer tool (https://github.com/eclipse-aaspe/package-explorer); **The aasx-package-explorer tool allows to save the environment model in several formats. However, the file format currently supported by NOVAAS is "aasx w/ JSON"**;
-1. Change the httpauth file in the folder "files/httpauth" properly;
-1. Run the docker and/or docker-compose commands.
-1. Change the logic to ensure the connection of NOVAAS to the asset (in the example the logic to handle this connection is part of the "DPDM/OperationalData" flow).
-
-### Notes
-
-- The current aasx model file has been generated using the following version of the AASX Explorer selecting the option aasx w/ JSON, this option is supported by the latest version of the AASX and fully tested.
-
-- To connect the model to the physical asset (data provided by the physical asset) please take a look at the "DPDM/OperationalData" flow that contains the logic to handle this connection. A pattern has been created that can be replicated for each new "submodel element". The connection between the model and the real data is based on identificators.
-
-![Semantic description of image](/source/images/Screenshot 2021-12-05 at 14.03.26.png)
-""Submodel Element" pattern"
-
-![Semantic description of image](/source/images/Screenshot 2021-12-08 at 21.18.png)
-""Submodel Element" property configuration"
-
-### Supported SubmodelElements
-
-As of now, not all new SubmodelElements of the AAS V3 are supported. Additional elements will be added in future updates. The currently supported SubmodelElements are:
-
-    SubmodelElementCollection
-    Property
-    MultiLanguageProperty
-    File
-    Blob
-    Operation
-    BasicElementEvent
+![NOVAAS Backend](/source/images/aasAssetConnection.png)
 
 
-## NOVAAS in action (Full tutorial below)
 
-▶️ [Watch the video](https://gitlab.com/gidouninova/novaas/-/raw/master/source/videos/NOVAAS_myMovie.mp4)
+## Using Docker Compose
+
+### Quick Start
+
+1. Clone the repository (if not already done):
+   ```bash
+   git clone https://gitlab.com/gidouninova/novaas.git
+   cd novaas
+   ```
+
+2. Start NOVAAS:
+   ```bash
+   docker-compose up -d
+   ```
+
+### Building the Image
+
+To rebuild the Docker image:
+
+```bash
+docker-compose build
+```
+
+### Configuration
+
+Customize the following environment variables in the `.env` file:
+
+- `PORT_FORWARDING`: External port (default: 1872)
+- `HOST`: Host IP address
+- Other environment variables as needed
+
+### Stopping NOVAAS
+
+```bash
+docker-compose down
+```
+
+## Using Pre-built Images
+
+Pre-built Docker images are available in the GitLab Container Registry:
+
+[View NOVAAS Container Registry](https://gitlab.com/novaas/catalog/nova-school-of-science-and-technology/novaas/container_registry)
+
+To pull the latest image:
+
+```bash
+docker pull registry.gitlab.com/novaas/catalog/nova-school-of-science-and-technology/novaas:latest
+```
+
+## Customizing NOVAAS
+
+NOVAAS is designed to be highly customizable. To create your own version:
+
+### 1. Environment Model
+
+1. Place your environment model file in the `files/` directory
+2. **Important**: The file must be named `model.aasx`
+3. The model should follow the AAS data model specification:
+   - [Details of the Asset Administration Shell - Part 1](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html)
+   - Created using the [AASX Package Explorer](https://github.com/eclipse-aaspe/package-explorer)
+   - **Format**: Must be saved as "aasx w/ JSON"
+
+### 2. Authentication
+
+Update the `files/httpauth` file with your authentication settings.
+
+### 3. Asset Connection
+
+Modify the connection logic in the "DPDM/OperationalData" flow to connect NOVAAS to your asset.
+
+### Implementation Notes
+
+#### AASX Model
+- The provided `model.aasx` was created using AASX Explorer with the "aasx w/ JSON" option
+
+#### Asset Connection
+
+To connect your physical asset to the digital twin:
+
+1. Navigate to the "DPDM/OperationalData" flow
+2. Replicate the existing submodel element pattern for new elements
+3. The connection between the model and real data is based on identifiers
+
+![Submodel Element Pattern](/source/images/Screenshot%202021-12-05%20at%2014.03.26.png)
+*Submodel element pattern example*
+
+![Submodel Element Properties](/source/images/Screenshot%202021-12-08%20at%2021.18.png)
+*Submodel element property configuration*
+
+## Supported AAS Features
+
+### Submodel Elements
+
+NOVAAS currently supports the following AAS V3 Submodel Elements:
+
+- `SubmodelElementCollection`
+- `Property`
+- `MultiLanguageProperty`
+- `File`
+- `Blob`
+- `Operation`
+- `BasicElementEvent`
+
+> **Note**: Support for additional Submodel Elements will be added in future updates.
+
+
+## Demo & Tutorial
+
+[![NOVAAS Demo Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://gitlab.com/gidouninova/novaas/-/raw/master/source/videos/NOVAAS_myMovie.mp4)
+
+[Watch the full tutorial video](https://gitlab.com/gidouninova/novaas/-/raw/master/source/videos/NOVAAS_myMovie.mp4)
+
+## License
+
+[Specify License Here]
+
+## Contributing
+
+Contributions are welcome! Please see our [contributing guidelines](CONTRIBUTING.md) for details.
+
+## Support
+
+For support, please open an issue in the [issue tracker](https://gitlab.com/gidouninova/novaas/-/issues).
